@@ -1,4 +1,4 @@
-﻿using InferNetExamples;
+﻿using InferNet;
 using Xunit;
 
 namespace InferNetExamplesTests

@@ -1,18 +1,22 @@
 ﻿using MicrosoftResearch.Infer.Models;
 using MicrosoftResearch.Infer;
+using Ninject;
 
-
-namespace InferNetExamples
+namespace InferNet
 {
     public class TwoCoins
     {
+        private static InferenceEngine InferenceEngine 
+        { 
+            get { return DependencyWrapper.Kernel.Get<InferenceEngine>(); }
+        }
+        
         public object ForwardProbability(double firstDistribution, double secondDistribution)
         {
             var firstCoin = Variable.Bernoulli(firstDistribution);
             var secondCoin = Variable.Bernoulli(secondDistribution);
             var bothHeads = firstCoin & secondCoin;
-            var engine = new InferenceEngine();
-            return engine.Infer(bothHeads);
+            return InferenceEngine.Infer(bothHeads);
         }
 
         public object BackwardProbability(double firstDistribution, double secondDistribution, bool result)
@@ -21,8 +25,7 @@ namespace InferNetExamples
             var secondCoin = Variable.Bernoulli(secondDistribution);
             var bothHeads = firstCoin & secondCoin;
             bothHeads.ObservedValue = result;
-            var engine = new InferenceEngine();
-            return engine.Infer(firstCoin);
+            return InferenceEngine.Infer(firstCoin);
         }
     }
 }

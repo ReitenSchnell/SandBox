@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TruncatedGaussianTests.cs" />
     <Compile Include="TwoCoinsTests.cs" />
   </ItemGroup>
   <ItemGroup>

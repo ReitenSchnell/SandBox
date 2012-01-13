@@ -1,7 +1,7 @@
 ﻿using InferNet;
 using Xunit;
 
-namespace InferNetExamplesTests
+namespace InferNetTests
 {
     public class TwoCoinsTests
     {

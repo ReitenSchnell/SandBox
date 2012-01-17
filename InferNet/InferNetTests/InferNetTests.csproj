@@ -31,6 +31,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Infer.Compiler, Version=2.4.11012.0, Culture=neutral, PublicKeyToken=e4813102a62778da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SharedLib\Infer.Compiler.dll</HintPath>
+    </Reference>
+    <Reference Include="Infer.Runtime, Version=2.4.11012.0, Culture=neutral, PublicKeyToken=e4813102a62778da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SharedLib\Infer.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,6 +54,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BayesPointMachineTests.cs" />
     <Compile Include="LearningGaussianTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TwoCoinsTests.cs" />

@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BayesPointMachine.cs" />
+    <Compile Include="ClinicalTrial.cs" />
     <Compile Include="DependencyWrapper.cs" />
     <Compile Include="LearningGaussian.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

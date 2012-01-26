@@ -1,4 +1,5 @@
 from operator import itemgetter
+import re
 import string
 from unittest import TestCase
 import math
@@ -36,6 +37,12 @@ class PythonChallenge:
         filtered = filter(lambda x: x[1]<10, sortedByValue)
         return zip(*filtered)[0]
 
+    def challenge4(self, str):
+        fileObject = open('challenge3.txt')
+        str = fileObject.read()
+        pattern = r'^[A-Z]{3}[a-z]{1}[A-Z]{3}'
+        return re.match(pattern, str)
+
 class PythonChallengeTests(TestCase):
 
     def test_challenge1(self):
@@ -56,6 +63,28 @@ class PythonChallengeTests(TestCase):
         self.assertTrue('t' in str(result))
         self.assertTrue('y' in str(result))
         self.assertTrue('u' in str(result))
+
+    def test_challenge4_should_return_whole_string(self):
+        str = 'ABCdEFG'
+        result = PythonChallenge().challenge4(str)
+        group = result.group()
+        self.assertEqual(str, group)
+
+
+
+
+class ResolvedChallenges(TestCase):
+    def test_challenge3(self):
+        s = ''.join([line.rstrip() for line in open("chars.txt")])
+        occurences = {}
+        for c in s: occurences[c] = occurences.get(c,0)+1
+        avg = len(s)//len(occurences)
+        print ''.join([c for c in s if occurences[c] < avg])
+
+       
+
+
+
 
         
             

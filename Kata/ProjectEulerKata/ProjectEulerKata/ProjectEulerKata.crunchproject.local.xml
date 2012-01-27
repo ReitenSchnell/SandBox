@@ -6,6 +6,7 @@
   <InstrumentAssembly>true</InstrumentAssembly>
   <IncludeStaticReferencesInWorkspace>true</IncludeStaticReferencesInWorkspace>
   <DefaultTestTimeout>60000</DefaultTestTimeout>
-  <UseBuildConfiguration />
+  <UseBuildConfiguration></UseBuildConfiguration>
   <UseCPUArchitecture>AutoDetect</UseCPUArchitecture>
+  <HiddenWarnings>LongTestTimesWithoutParallelExecution</HiddenWarnings>
 </ProjectConfiguration>

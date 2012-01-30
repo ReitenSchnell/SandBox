@@ -38,7 +38,7 @@ namespace ProjectEulerKata
         public void GetFibonacciEvenTerms_Main_CheckResult()
         {
             var result = problem.GetFibonacciEvenTerms(4000000);
-            result.Should().Be(44);
+            result.Should().Be(4613732);
         }
     }
 

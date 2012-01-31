@@ -18,7 +18,7 @@ namespace StringCalculator
         }
 
         [Fact]
-        public void Add_OneValue_ReturnsThisValue()
+        public void Add_OneNumber_ReturnsThisNumber()
         {
             var result = calculator.Add("1");
             result.Should().Be(1);
@@ -35,25 +35,25 @@ namespace StringCalculator
         public void Add_UnknownAmountOfValues_ReturnsTheirSum()
         {
             var rand = new Random();
-            var numbers = Enumerable.Range(0, rand.Next(1, 100)).Select(x => rand.Next(1, 100)).ToList();
+            var values = Enumerable.Range(0, rand.Next(1, 100)).Select(val => rand.Next(1, 100)).ToArray();
+            var result = calculator.Add(string.Join(",", values));
             var expected = 0;
-            numbers.ForEach(num => expected += num);
-            var result = calculator.Add(string.Join(",", numbers.ToArray()));
+            values.ToList().ForEach(val => expected += val);
             result.Should().Be(expected);
         }
 
         [Fact]
         public void Add_NewLineSeparator_ReturnsSum()
         {
-            var result = calculator.Add("1,2\n3");
+            var result = calculator.Add("1\n2,3");
             result.Should().Be(6);
         }
 
         [Fact]
-        public void Add_OneCharDelimiter_ReturnsSum()
+        public void Add_OneCharSeparator_ReturnsSum()
         {
-            var result = calculator.Add("//;\n1;2;3");
-            result.Should().Be(6);
+            var result = calculator.Add("//;\n2;3;4");
+            result.Should().Be(9);
         }
     }
 
@@ -61,17 +61,16 @@ namespace StringCalculator
     {
         public int Add(string number)
         {
-            if (String.IsNullOrEmpty(number))
+            if (string.IsNullOrEmpty(number))
                 return 0;
-            const string mark = "//";
-            if (number.StartsWith(mark))
+            var separators = new[] { ",", "\n" };
+            if (number.StartsWith("//"))
             {
-                var newSeparator = number[2];
-                number = number.Substring(4);
-                return number.Split(new[] {newSeparator}).Sum(val => Int32.Parse(val));
+                var newSeparator = number.Substring(2, 1);
+                return
+                    number.Substring(5).Split(new[] {newSeparator}, StringSplitOptions.RemoveEmptyEntries).Sum(val => Int32.Parse(val));
             }
-            var defaultSeparators = new[] {",", "\n"};
-            return number.Split(defaultSeparators, StringSplitOptions.RemoveEmptyEntries).Sum(val => Int32.Parse(val));
+            return (number.Split(separators, StringSplitOptions.RemoveEmptyEntries)).Sum(val => Int32.Parse(val));
         }
     }
 }

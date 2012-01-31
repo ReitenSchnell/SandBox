@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Xunit;
 using FluentAssertions;
 
@@ -7,7 +8,7 @@ namespace ProjectEulerKata
 {
     public class Problem4
     {
-        public int GetLargestPalindrom(int digits)
+        public long GetLargestPalindrom(int digits)
         {
             var max = (int)Math.Pow(10, digits);
             var min = (int)Math.Pow(10, digits - 1);
@@ -17,12 +18,11 @@ namespace ProjectEulerKata
                 for (var j = max - 1; j >= min; j--)
                 {
                     var prod = i*j;
-                    list.Add(prod);
-                    if (IsPalindrom(prod)) 
-                        return prod;
+                    if (IsPalindrom(prod))
+                        list.Add(prod); 
                 }
             }
-            return 0;
+            return list.Max();
         }
 
         public bool IsPalindrom(long number)
@@ -49,7 +49,7 @@ namespace ProjectEulerKata
         public void GetLargestPalindrom_ThreeDigits_Return9009()
         {
             var result = problem.GetLargestPalindrom(3);
-            result.Should().Be(580085);
+            result.Should().Be(906609);
         }
 
         [Fact]

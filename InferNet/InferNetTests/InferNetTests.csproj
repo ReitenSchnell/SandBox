@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FluentAssertions">
+      <HintPath>..\..\SharedLib\FluentAssertions.dll</HintPath>
+    </Reference>
     <Reference Include="Infer.Compiler, Version=2.4.11012.0, Culture=neutral, PublicKeyToken=e4813102a62778da, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\SharedLib\Infer.Compiler.dll</HintPath>

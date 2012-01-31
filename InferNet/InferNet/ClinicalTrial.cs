@@ -5,6 +5,13 @@ using Ninject;
 
 namespace InferNet
 {
+    public class TrialResults
+    {
+        public Bernoulli IsEffective { get; set; }
+        public Bernoulli ProbControl { get; set; }
+        public Bernoulli ProbTreated { get; set; }
+    }
+
     public class ClinicalTrial
     {
         private Variable<bool> isEffective;
@@ -42,6 +49,17 @@ namespace InferNet
         {
             CreateModel(treatedData, controlData);
             return ((Bernoulli) InferenceEngine.Infer(isEffective)).GetProbTrue() > 0.5;
+        }
+
+        public TrialResults GetResults(bool[] treatedData, bool[] controlData)
+        {
+            CreateModel(treatedData, controlData);
+            return new TrialResults
+                       {
+                           IsEffective = (Bernoulli)InferenceEngine.Infer(isEffective),
+                           ProbControl = (Bernoulli)InferenceEngine.Infer(probControl),
+                           ProbTreated = (Bernoulli)InferenceEngine.Infer(probTreated),
+                       };
         }
     }
 }

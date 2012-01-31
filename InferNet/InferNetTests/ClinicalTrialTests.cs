@@ -1,5 +1,6 @@
 using InferNet;
 using Xunit;
+using FluentAssertions;
 
 namespace InferNetTests
 {
@@ -17,8 +18,17 @@ namespace InferNetTests
         [Fact]
         public void IsTreatmentEffective_ReturnFalse()
         {
-            var result = clinicalTrial.IsTreatmentEffective(new[] { false, false, true, false, false }, new[] { true, false, true, true, false });
+            var result = clinicalTrial.IsTreatmentEffective(new[] { false, false, true, false, false }, new[] { false, false, false, true, false });
             Assert.False(result);
+        }
+
+        [Fact]
+        public void GetTrialResults_CheckResult()
+        {
+            var result = clinicalTrial.GetResults(new[] { false, false, true, false, false }, new[] { false, false, false, true, false });
+            var probControl = result.ProbControl.GetProbTrue();
+            var probTreated = result.ProbTreated.GetProbTrue();
+            
         }
 
     }

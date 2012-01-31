@@ -55,6 +55,34 @@ namespace StringCalculator
             var result = calculator.Add("//;\n2;3;4");
             result.Should().Be(9);
         }
+
+        [Fact]
+        public void Add_OneNumberIsNegative_Throws()
+        {
+            calculator.Invoking(calc => calc.Add("-3,4,-55")).ShouldThrow<Exception>().WithMessage("negatives not allowed: -3,-55");
+        }
+
+        [Fact]
+        public void Add_NumbersBiggerThen1000_Ignores()
+        {
+            var result = calculator.Add("3,1001,2");
+            result.Should().Be(5);
+        }
+
+
+        [Fact]
+        public void Add_OneNumberIs1000_NotIgnores()
+        {
+            var result = calculator.Add("3,1000,2");
+            result.Should().Be(1005);
+        }
+
+        [Fact]
+        public void Add_TwoCharDelimiter_ReturnsSum()
+        {
+            var result = calculator.Add("//***\n1***2***3");
+            result.Should().Be(6);
+        }
     }
 
     public class Calculator
@@ -63,14 +91,28 @@ namespace StringCalculator
         {
             if (string.IsNullOrEmpty(number))
                 return 0;
-            var separators = new[] { ",", "\n" };
-            if (number.StartsWith("//"))
+            
+            string[] values;
+            const string separatorStart = "//";
+            const string newString = "\n";
+            if (number.StartsWith(separatorStart))
             {
-                var newSeparator = number.Substring(2, 1);
-                return
-                    number.Substring(5).Split(new[] {newSeparator}, StringSplitOptions.RemoveEmptyEntries).Sum(val => Int32.Parse(val));
+                var newSeparator = number.Substring(separatorStart.Length, number.IndexOf(newString) - separatorStart.Length);
+                number = number.Substring(number.IndexOf(newString)+newString.Length);
+                values = number.Split(new[] {newSeparator}, StringSplitOptions.RemoveEmptyEntries);
             }
-            return (number.Split(separators, StringSplitOptions.RemoveEmptyEntries)).Sum(val => Int32.Parse(val));
+            else
+            {
+                var defaultSeparators = new[] { ",", newString };
+                values = (number.Split(defaultSeparators, StringSplitOptions.RemoveEmptyEntries));
+            }
+
+            var negatives = values.Where(val => val.StartsWith("-")).ToArray();
+            if (negatives.Any())
+                throw new Exception(String.Format("negatives not allowed: {0}", string.Join(",", negatives)));
+            
+
+            return values.Select(Int32.Parse).Where(val => val<=1000).Sum();
         }
     }
 }

@@ -23,12 +23,17 @@ namespace InferNetTests
         }
 
         [Fact]
-        public void GetTrialResults_CheckResult()
+        public void GetTrialResults_NotEffectiveTrial_CheckResult()
         {
             var result = clinicalTrial.GetResults(new[] { false, false, true, false, false }, new[] { false, false, false, true, false });
-            var probControl = result.ProbControl.GetProbTrue();
-            var probTreated = result.ProbTreated.GetProbTrue();
-            
+            Assert.Equal(result.ProbTreated, result.ProbControl);
+        }
+
+        [Fact]
+        public void GetTrialResults_EffectiveTrial_CheckResult()
+        {
+            var result = clinicalTrial.GetResults(new[] { true, false, true, true, true }, new[] { false, false, true, false, false });
+            Assert.True(result.ProbTreated > result.ProbControl);
         }
 
     }

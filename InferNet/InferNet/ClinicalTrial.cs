@@ -8,8 +8,8 @@ namespace InferNet
     public class TrialResults
     {
         public Bernoulli IsEffective { get; set; }
-        public Bernoulli ProbControl { get; set; }
-        public Bernoulli ProbTreated { get; set; }
+        public double ProbControl { get; set; }
+        public double ProbTreated { get; set; }
     }
 
     public class ClinicalTrial
@@ -57,8 +57,8 @@ namespace InferNet
             return new TrialResults
                        {
                            IsEffective = (Bernoulli)InferenceEngine.Infer(isEffective),
-                           ProbControl = (Bernoulli)InferenceEngine.Infer(probControl),
-                           ProbTreated = (Bernoulli)InferenceEngine.Infer(probTreated),
+                           ProbControl = InferenceEngine.Infer<Beta>(probControl).GetMean(),
+                           ProbTreated = InferenceEngine.Infer<Beta>(probTreated).GetMean()
                        };
         }
     }

@@ -1,6 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
-using System.Threading;
+using System.Text.RegularExpressions;
 using FluentAssertions;
 using Xunit;
 
@@ -9,110 +10,114 @@ namespace StringCalculator
     public class CalculatorTests
     {
         private readonly Calculator calculator = new Calculator();
+        private string inputString;
+        private int result;
+
+        private void Act()
+        {
+            result = calculator.Add(inputString);
+        }
 
         [Fact]
         public void Add_EmptyString_Returns0()
         {
-            var result = calculator.Add(String.Empty);
+            inputString = String.Empty;
+            Act();
             result.Should().Be(0);
         }
 
         [Fact]
-        public void Add_OneNumber_ReturnsThisNumber()
+        public void Add_OneValue_ReturnsThisValue()
         {
-            var result = calculator.Add("1");
-            result.Should().Be(1);
+            inputString = "2";
+            Act();
+            result.Should().Be(2);
         }
 
         [Fact]
-        public void Add_TwoValues_ReturnsTheirSum()
+        public void Add_TwoValues_ReturnsSum()
         {
-            var result = calculator.Add("1,2");
-            result.Should().Be(3);
+            inputString = "2,3";
+            Act();
+            result.Should().Be(5);
         }
 
         [Fact]
-        public void Add_UnknownAmountOfValues_ReturnsTheirSum()
+        public void Add_RandomNumberOfValues_ReturnsSum()
         {
-            var rand = new Random();
-            var values = Enumerable.Range(0, rand.Next(1, 100)).Select(val => rand.Next(1, 100)).ToArray();
-            var result = calculator.Add(string.Join(",", values));
-            var expected = 0;
-            values.ToList().ForEach(val => expected += val);
+            List<int> values = GetValues();
+            inputString = string.Join(",", values);
+            int expected = 0;
+            values.ForEach(val => expected += val);
+
+            Act();
             result.Should().Be(expected);
+        }
+
+        private List<int> GetValues()
+        {
+            var rand = new Random(Guid.NewGuid().GetHashCode());
+            return Enumerable.Range(0, rand.Next(0, 100)).Select(val => rand.Next(0, 100)).ToList();
+        }
+
+        [Fact]
+        public void Test_random()
+        {
+            var ar1 = GetValues();
+            var ar2 = GetValues();
+            ar1.Should().NotBeEquivalentTo(ar2);
         }
 
         [Fact]
         public void Add_NewLineSeparator_ReturnsSum()
         {
-            var result = calculator.Add("1\n2,3");
-            result.Should().Be(6);
-        }
-
-        [Fact]
-        public void Add_OneCharSeparator_ReturnsSum()
-        {
-            var result = calculator.Add("//;\n2;3;4");
+            inputString = "2\n3,4";
+            Act();
             result.Should().Be(9);
         }
 
         [Fact]
-        public void Add_OneNumberIsNegative_Throws()
+        public void Add_OneCharDelimiter_ReturnsSum()
         {
-            calculator.Invoking(calc => calc.Add("-3,4,-55")).ShouldThrow<Exception>().WithMessage("negatives not allowed: -3,-55");
+            inputString = "//;\n2;3;4";
+            Act();
+            result.Should().Be(9);
         }
 
         [Fact]
-        public void Add_NumbersBiggerThen1000_Ignores()
+        public void Add_NegativeValues_Throws()
         {
-            var result = calculator.Add("3,1001,2");
-            result.Should().Be(5);
-        }
-
-
-        [Fact]
-        public void Add_OneNumberIs1000_NotIgnores()
-        {
-            var result = calculator.Add("3,1000,2");
-            result.Should().Be(1005);
+            inputString = "2,-3,4,-5";
+            calculator.Invoking(calc => calc.Add(inputString)).ShouldThrow<Exception>(
+                "negatives are not allowed: -3, -5");
         }
 
         [Fact]
-        public void Add_TwoCharDelimiter_ReturnsSum()
+        public void Add_ValuesGreaterThen1000_Ignored()
         {
-            var result = calculator.Add("//***\n1***2***3");
-            result.Should().Be(6);
+            inputString = "2,3,1002,5,1005";
+            Act();
+            result.Should().Be(10);
         }
+        
     }
 
     public class Calculator
     {
         public int Add(string number)
         {
-            if (string.IsNullOrEmpty(number))
-                return 0;
-            
-            string[] values;
-            const string separatorStart = "//";
-            const string newString = "\n";
-            if (number.StartsWith(separatorStart))
+            var separators = new[] {",", "\n"};
+            if (number.StartsWith("//"))
             {
-                var newSeparator = number.Substring(separatorStart.Length, number.IndexOf(newString) - separatorStart.Length);
-                number = number.Substring(number.IndexOf(newString)+newString.Length);
-                values = number.Split(new[] {newSeparator}, StringSplitOptions.RemoveEmptyEntries);
+                separators = new[] {number.Substring(2, 1)};
+                number = Regex.Replace(number, "//(.*?)\n", string.Empty);
             }
-            else
-            {
-                var defaultSeparators = new[] { ",", newString };
-                values = (number.Split(defaultSeparators, StringSplitOptions.RemoveEmptyEntries));
-            }
-
-            var negatives = values.Where(val => val.StartsWith("-")).ToArray();
+            var values = number.Split(separators, StringSplitOptions.RemoveEmptyEntries);
+            var negatives = values.ToList().Where(val => val.StartsWith("-"));
             if (negatives.Any())
-                throw new Exception(String.Format("negatives not allowed: {0}", string.Join(",", negatives)));
-            
+                throw new Exception(String.Format("negatives are not allowed: {0}", String.Join(" ,", negatives)));
 
-            return values.Select(Int32.Parse).Where(val => val<=1000).Sum();
+            return values.Select(Int32.Parse).Where(v => v <= 1000).Sum();
         }
     }
 }

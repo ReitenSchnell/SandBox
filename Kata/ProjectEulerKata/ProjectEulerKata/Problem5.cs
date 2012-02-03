@@ -18,14 +18,11 @@ namespace ProjectEulerKata
        
         public void FindDividers(int number)
         {
-            var newDividers = new List<int>();
             foreach (var i in dividers)
             {
                 if (number%i != 0) continue;
                 number = number/i;
-                newDividers.Add(i);
             }
-            dividers.AddRange(newDividers);
             if (number != 1)
                 dividers.Add(number);
         }
@@ -36,10 +33,17 @@ namespace ProjectEulerKata
         private readonly Problem5 problem5 = new Problem5(); 
 
         [Fact]
-        public void GetFactorial_CheckResult()
+        public void GetMinimumValue_CheckResult()
         {
             var result = problem5.GetMinimumValue(10);
             result.Should().Be(2520);
+        }
+
+        [Fact]
+        public void GetMinimumValue_CheckFinalResult()
+        {
+            var result = problem5.GetMinimumValue(20);
+            result.Should().Be(232792560);
         }
     }
 }

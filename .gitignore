@@ -29,4 +29,5 @@ _ReSharper*/
 [Bb]uild[Ll]og.*
 *.[Pp]ublish.xml
 *.resharper
-.idea*/
+*.local.xml
+workspace.xml

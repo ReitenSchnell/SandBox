@@ -12,7 +12,10 @@ class StringCalculator:
             number = number[4:]
         if separator in number:
             number = string.replace(number, separator, default_separator)
-        return sum([int(val) for val in string.split(number,default_separator)])
+        values = [int(val) for val in string.split(number, default_separator)]
+        if filter(lambda x: x<0, values):
+            raise Exception
+        return sum(values)
 
 class StringCalculatorTests(TestCase):
     def setUp(self):

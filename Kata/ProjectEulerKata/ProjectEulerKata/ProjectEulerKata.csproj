@@ -56,6 +56,7 @@
     <Compile Include="Problem4.cs" />
     <Compile Include="Problem5.cs" />
     <Compile Include="Problem6.cs" />
+    <Compile Include="Problem8.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

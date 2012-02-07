@@ -7,14 +7,16 @@ class StringCalculator:
         if not number: return 0
         default_separator = ','
         separator = '\n'
-        if len(number)>2 and  number[0] == number[1] == '/':
-            separator = number[2]
-            number = number[4:]
+        if len(number)>2 and  number[0] == number[1] == '/' and number[2] == '[':
+            pos = number.find(separator)
+            separator = number[3:pos-1]
+            number = number[pos+1:]
         if separator in number:
             number = string.replace(number, separator, default_separator)
-        values = [int(val) for val in string.split(number, default_separator)]
-        if filter(lambda x: x<0, values):
-            raise Exception
+        values = filter(lambda x: x<=1000, [int(val) for val in string.split(number, default_separator)])
+        negatives = filter(lambda x: x < 0, values)
+        if negatives:
+            raise StandardError('Negatives are not allowed: {0}'.format(string.join([str(val) for val in negatives], ',')))
         return sum(values)
 
 class StringCalculatorTests(TestCase):
@@ -44,11 +46,32 @@ class StringCalculatorTests(TestCase):
         self.assertEqual(9, result)
 
     def test_one_char_free_delimiter_returns_sum(self):
-        result = self.calculator.Add('//;\n2;3;5')
+        result = self.calculator.Add('//[;]\n2;3;5')
         self.assertEqual(10, result)
 
     def test_negatives_in_number_throws(self):
-        self.assertRaises(Exception, self.calculator.Add, '2,3,-5,-6')
+        self.assertRaises(StandardError, self.calculator.Add, '2,3,-5,-6')
+
+    def test_negatives_in_number_error_message_should_contain_negatives(self):
+        message = ''
+        try:
+            self.calculator.Add('2,-3,5,-4')
+        except StandardError as ex:
+            message = ex.message
+        self.assertEqual(message, 'Negatives are not allowed: -3,-4')
+
+    def test_numbers_bigger_then_1000_should_be_ignored(self):
+        result = self.calculator.Add('1,1001,2,1005')
+        self.assertEqual(3, result)
+
+    def test_3chars_delimiters_should_return_sum(self):
+        result = self.calculator.Add('//[***]\n2***3***1')
+        self.assertEqual(6, result)
+
+    def test_several_separators_should_return_sum(self):
+        result = self.calculator.Add('//[***][;;][-]\n2***3;;4-5***1')
+        self.assertEqual(15, result)
+            
         
         
 

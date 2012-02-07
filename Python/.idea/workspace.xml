@@ -23,10 +23,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="pyton_challenges.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="pyton_challenges.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pyton_challenges.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="0" selection-start="2359" selection-end="2359" vertical-scroll-proportion="0.66849816">
+            <state line="69" column="0" selection-start="2359" selection-end="2359" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="kata.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/kata.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="24" selection-start="198" selection-end="198" vertical-scroll-proportion="0.18181819">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="exceptions.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/.PyCharm10/system/python_stubs/-891257481/exceptions.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="84" column="10" selection-start="2653" selection-end="2653" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -36,24 +54,6 @@
         <entry file="file://C:/Python26/Lib/unittest.py">
           <provider selected="true" editor-type-id="text-editor">
             <state line="278" column="0" selection-start="9830" selection-end="9830" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tcunittest.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_HOME_DIR$/helpers/pycharm/tcunittest.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="172" column="0" selection-start="5846" selection-end="5846" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="utrunner.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_HOME_DIR$/helpers/pycharm/utrunner.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="153" column="0" selection-start="4587" selection-end="4587" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -72,6 +72,7 @@
         <option value="$PROJECT_DIR$/PythonChallemge.py" />
         <option value="$PROJECT_DIR$/Challenge.py" />
         <option value="$PROJECT_DIR$/pyton_challenges.py" />
+        <option value="$PROJECT_DIR$/kata.py" />
       </list>
     </option>
   </component>
@@ -177,8 +178,8 @@
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
   </component>
-  <component name="RunManager" selected="Python's unittest.Unittests in PythonChallengeTests.test_challenge4_should_return_whole_string">
-    <configuration default="false" name="Unittests in ResolvedChallenges.test_challenge3" type="PythonUnitTestConfigurationType" factoryName="Python's unittest" temporary="true">
+  <component name="RunManager" selected="Python's unittest.Unittests in StringCalculatorTests">
+    <configuration default="false" name="Unittests in StringCalculatorTests.test_unknown_amount_of_numbers_returns_sum" type="PythonUnitTestConfigurationType" factoryName="Python's unittest" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
@@ -186,9 +187,9 @@
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <module name="Python" />
-      <option name="SCRIPT_NAME" value="pyton_challenges.py" />
-      <option name="CLASS_NAME" value="ResolvedChallenges" />
-      <option name="METHOD_NAME" value="test_challenge3" />
+      <option name="SCRIPT_NAME" value="kata.py" />
+      <option name="CLASS_NAME" value="StringCalculatorTests" />
+      <option name="METHOD_NAME" value="test_unknown_amount_of_numbers_returns_sum" />
       <option name="FOLDER_NAME" value="" />
       <option name="TEST_TYPE" value="TEST_METHOD" />
       <option name="PATTERN" value="" />
@@ -199,7 +200,7 @@
       <ConfigurationWrapper RunnerId="PythonRunner" />
       <method />
     </configuration>
-    <configuration default="false" name="Unittests in PythonChallengeTests.test_challenge4_should_return_result" type="PythonUnitTestConfigurationType" factoryName="Python's unittest" temporary="true">
+    <configuration default="false" name="Unittests in StringCalculatorTests.test_one_char_free_delimiter_returns_sum" type="PythonUnitTestConfigurationType" factoryName="Python's unittest" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
@@ -207,9 +208,9 @@
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <module name="Python" />
-      <option name="SCRIPT_NAME" value="pyton_challenges.py" />
-      <option name="CLASS_NAME" value="PythonChallengeTests" />
-      <option name="METHOD_NAME" value="test_challenge4_should_return_result" />
+      <option name="SCRIPT_NAME" value="kata.py" />
+      <option name="CLASS_NAME" value="StringCalculatorTests" />
+      <option name="METHOD_NAME" value="test_one_char_free_delimiter_returns_sum" />
       <option name="FOLDER_NAME" value="" />
       <option name="TEST_TYPE" value="TEST_METHOD" />
       <option name="PATTERN" value="" />
@@ -220,7 +221,7 @@
       <ConfigurationWrapper RunnerId="PythonRunner" />
       <method />
     </configuration>
-    <configuration default="false" name="Unittests in PythonChallengeTests.test_challenge4_should_return_part_of_string" type="PythonUnitTestConfigurationType" factoryName="Python's unittest" temporary="true">
+    <configuration default="false" name="Unittests in StringCalculatorTests.test_negatives_in_number_throws" type="PythonUnitTestConfigurationType" factoryName="Python's unittest" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
@@ -228,47 +229,9 @@
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <module name="Python" />
-      <option name="SCRIPT_NAME" value="pyton_challenges.py" />
-      <option name="CLASS_NAME" value="PythonChallengeTests" />
-      <option name="METHOD_NAME" value="test_challenge4_should_return_part_of_string" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_METHOD" />
-      <option name="PATTERN" value="" />
-      <option name="PUREUNITTEST" value="true" />
-      <RunnerSettings RunnerId="PythonRunner" />
-      <ConfigurationWrapper RunnerId="PythonRunner" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Unittests in PythonChallengeTests.test_challenge4_should_return_noneg" type="PythonUnitTestConfigurationType" factoryName="Python's unittest" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <module name="Python" />
-      <option name="SCRIPT_NAME" value="pyton_challenges.py" />
-      <option name="CLASS_NAME" value="PythonChallengeTests" />
-      <option name="METHOD_NAME" value="test_challenge4_should_return_noneg" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_METHOD" />
-      <option name="PATTERN" value="" />
-      <option name="PUREUNITTEST" value="true" />
-      <RunnerSettings RunnerId="PythonRunner" />
-      <ConfigurationWrapper RunnerId="PythonRunner" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Unittests in PythonChallengeTests.test_challenge4_should_return_whole_string" type="PythonUnitTestConfigurationType" factoryName="Python's unittest" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <module name="Python" />
-      <option name="SCRIPT_NAME" value="pyton_challenges.py" />
-      <option name="CLASS_NAME" value="PythonChallengeTests" />
-      <option name="METHOD_NAME" value="test_challenge4_should_return_whole_string" />
+      <option name="SCRIPT_NAME" value="kata.py" />
+      <option name="CLASS_NAME" value="StringCalculatorTests" />
+      <option name="METHOD_NAME" value="test_negatives_in_number_throws" />
       <option name="FOLDER_NAME" value="" />
       <option name="TEST_TYPE" value="TEST_METHOD" />
       <option name="PATTERN" value="" />
@@ -277,6 +240,46 @@
       <RunnerSettings RunnerId="PythonRunner" />
       <ConfigurationWrapper RunnerId="PyDebugRunner" />
       <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittests in StringCalculatorTests" type="PythonUnitTestConfigurationType" factoryName="Python's unittest" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <module name="Python" />
+      <option name="SCRIPT_NAME" value="kata.py" />
+      <option name="CLASS_NAME" value="StringCalculatorTests" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_CLASS" />
+      <option name="PATTERN" value="" />
+      <option name="PUREUNITTEST" value="true" />
+      <RunnerSettings RunnerId="PyDebugRunner" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PyDebugRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittests in StringCalculatorTests.test_3chars_delimiters_should_return_sum" type="PythonUnitTestConfigurationType" factoryName="Python's unittest" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <module name="Python" />
+      <option name="SCRIPT_NAME" value="kata.py" />
+      <option name="CLASS_NAME" value="StringCalculatorTests" />
+      <option name="METHOD_NAME" value="test_3chars_delimiters_should_return_sum" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="PATTERN" value="" />
+      <option name="PUREUNITTEST" value="true" />
+      <RunnerSettings RunnerId="PyDebugRunner" />
+      <ConfigurationWrapper RunnerId="PyDebugRunner" />
       <method />
     </configuration>
     <configuration default="true" type="PythonUnitTestConfigurationType" factoryName="Python's unittest">
@@ -327,11 +330,11 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python's unittest.Unittests in ResolvedChallenges.test_challenge3" />
-      <item index="1" class="java.lang.String" itemvalue="Python's unittest.Unittests in PythonChallengeTests.test_challenge4_should_return_result" />
-      <item index="2" class="java.lang.String" itemvalue="Python's unittest.Unittests in PythonChallengeTests.test_challenge4_should_return_part_of_string" />
-      <item index="3" class="java.lang.String" itemvalue="Python's unittest.Unittests in PythonChallengeTests.test_challenge4_should_return_noneg" />
-      <item index="4" class="java.lang.String" itemvalue="Python's unittest.Unittests in PythonChallengeTests.test_challenge4_should_return_whole_string" />
+      <item index="0" class="java.lang.String" itemvalue="Python's unittest.Unittests in StringCalculatorTests.test_unknown_amount_of_numbers_returns_sum" />
+      <item index="1" class="java.lang.String" itemvalue="Python's unittest.Unittests in StringCalculatorTests.test_one_char_free_delimiter_returns_sum" />
+      <item index="2" class="java.lang.String" itemvalue="Python's unittest.Unittests in StringCalculatorTests.test_negatives_in_number_throws" />
+      <item index="3" class="java.lang.String" itemvalue="Python's unittest.Unittests in StringCalculatorTests" />
+      <item index="4" class="java.lang.String" itemvalue="Python's unittest.Unittests in StringCalculatorTests.test_3chars_delimiters_should_return_sum" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
@@ -369,9 +372,9 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2557298" sideWeight="0.67124856" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2557298" sideWeight="0.6735395" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39862543" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32875144" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32646048" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -437,7 +440,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pyton_challenges.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="0" selection-start="2359" selection-end="2359" vertical-scroll-proportion="0.66849816">
+        <state line="69" column="0" selection-start="2359" selection-end="2359" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm10/system/python_stubs/-891257481/exceptions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="84" column="10" selection-start="2653" selection-end="2653" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -445,6 +453,13 @@
     <entry file="file://C:/Python26/Lib/unittest.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="278" column="0" selection-start="9830" selection-end="9830" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kata.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="24" selection-start="198" selection-end="198" vertical-scroll-proportion="0.18181819">
           <folding />
         </state>
       </provider>

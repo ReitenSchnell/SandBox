@@ -6,13 +6,28 @@ class StringCalculator:
     def Add(self, number):
         if not number: return 0
         default_separator = ','
-        separator = '\n'
-        if len(number)>2 and  number[0] == number[1] == '/' and number[2] == '[':
-            pos = number.find(separator)
-            separator = number[3:pos-1]
+        new_line = '\n'
+        separators = [new_line]
+
+        if len(number)>2 and  number[0] == number[1] == '/':
+            pos = number.find(new_line)
+            separator_range = number[2:pos]
             number = number[pos+1:]
-        if separator in number:
-            number = string.replace(number, separator, default_separator)
+            separators = []
+            sep = ''
+            for i in range(len(separator_range)):
+                if separator_range[i] == '[':
+                    continue
+                if separator_range[i] == ']':
+                    separators.append(sep)
+                    sep = ''
+                    continue
+                sep = sep + separator_range[i]
+
+        for sep in separators:
+            if sep in number:
+                number = string.replace(number, sep, default_separator)
+                
         values = filter(lambda x: x<=1000, [int(val) for val in string.split(number, default_separator)])
         negatives = filter(lambda x: x < 0, values)
         if negatives:
@@ -57,7 +72,7 @@ class StringCalculatorTests(TestCase):
         try:
             self.calculator.Add('2,-3,5,-4')
         except StandardError as ex:
-            message = ex.message
+            message = ex.args[0]
         self.assertEqual(message, 'Negatives are not allowed: -3,-4')
 
     def test_numbers_bigger_then_1000_should_be_ignored(self):

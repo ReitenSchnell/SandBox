@@ -1,91 +1,80 @@
 import random
+import re
 import string
 from unittest import TestCase
 
 class StringCalculator:
-    def Add(self, number):
-        if not number: return 0
-        default_separator = ','
-        new_line = '\n'
-        separators = [new_line]
-
-        if len(number)>2 and  number[0] == number[1] == '/':
-            pos = number.find(new_line)
-            separator_range = number[2:pos]
-            number = number[pos+1:]
-            separators = []
-            sep = ''
-            for i in range(len(separator_range)):
-                if separator_range[i] == '[':
-                    continue
-                if separator_range[i] == ']':
-                    separators.append(sep)
-                    sep = ''
-                    continue
-                sep = sep + separator_range[i]
-
-        for sep in separators:
-            if sep in number:
-                number = string.replace(number, sep, default_separator)
-                
-        values = filter(lambda x: x<=1000, [int(val) for val in string.split(number, default_separator)])
-        negatives = filter(lambda x: x < 0, values)
-        if negatives:
-            raise StandardError('Negatives are not allowed: {0}'.format(string.join([str(val) for val in negatives], ',')))
-        return sum(values)
+   def add(self, number):
+       if number.startswith('//'):
+           delimiters = re.findall(r"//\[(.+)\]\n", number)
+           number = re.findall(r"//\[.+\]\n(.+)", number)[0]
+           for delimiter in delimiters:
+               number = number.replace(delimiter, ',')
+       pattern = r"(\-?\d+)[,|\n]?"
+       result = re.findall(pattern, number)
+       values = [int(val) for val in result if int(val) <= 1000]
+       negatives = [val for val in values if val<0]
+       if negatives:
+           raise StandardError('negatives are not allowed: %s'%(string.join([str(val) for val in negatives], ', ')))
+       return sum(values)
 
 class StringCalculatorTests(TestCase):
     def setUp(self):
-        self.calculator = StringCalculator()
+        self.calc = StringCalculator()
 
-    def test_empty_string_returns_0(self):
-        result = self.calculator.Add('')
+    def test_add_empty_string_should_return_0(self):
+        result = self.calc.add('')
         self.assertEqual(0, result)
 
-    def test_one_value_returns_this_value(self):
-        result = self.calculator.Add('2')
+    def test_one_value_returns_this_int_value(self):
+        result = self.calc.add('2')
         self.assertEqual(2, result)
 
-    def test_two_values_returns_their_sum(self):
-        result = self.calculator.Add('2,3')
+    def test_two_values_with_comma_sep_returns_sum(self):
+        result = self.calc.add('2,3')
         self.assertEqual(5, result)
 
-    def test_unknown_amount_of_numbers_returns_sum(self):
-        numbers = [random.randint(0,100) for val in range(0, random.randint(0,100))]
-        str_value = string.join([str(val) for val in numbers], ',')
-        result = self.calculator.Add(str_value)
-        self.assertEqual(sum(numbers), result)
+    def test_unknown_amount_of_values_return_sum(self):
+        values = [random.randint(0,100) for val in range(0, random.randint(0,100))]
+        str_values = string.join([str(val) for val in values], ',')
+        result = self.calc.add(str_values)
+        self.assertEqual(sum(values), result)
 
-    def test_new_line_separator_returns_sum(self):
-        result = self.calculator.Add('2\n3,4')
-        self.assertEqual(9, result)
-
-    def test_one_char_free_delimiter_returns_sum(self):
-        result = self.calculator.Add('//[;]\n2;3;5')
-        self.assertEqual(10, result)
-
-    def test_negatives_in_number_throws(self):
-        self.assertRaises(StandardError, self.calculator.Add, '2,3,-5,-6')
-
-    def test_negatives_in_number_error_message_should_contain_negatives(self):
-        message = ''
-        try:
-            self.calculator.Add('2,-3,5,-4')
-        except StandardError as ex:
-            message = ex.args[0]
-        self.assertEqual(message, 'Negatives are not allowed: -3,-4')
-
-    def test_numbers_bigger_then_1000_should_be_ignored(self):
-        result = self.calculator.Add('1,1001,2,1005')
-        self.assertEqual(3, result)
-
-    def test_3chars_delimiters_should_return_sum(self):
-        result = self.calculator.Add('//[***]\n2***3***1')
+    def test_newline_separator_returns_sum(self):
+        result = self.calc.add('2\n3,1')
         self.assertEqual(6, result)
 
-    def test_several_separators_should_return_sum(self):
-        result = self.calculator.Add('//[***][;;][-]\n2***3;;4-5***1')
-        self.assertEqual(15, result)
+    def test_negatives_inNumber_should_throw_error(self):
+        self.assertRaises(StandardError, self.calc.add, '2,-4,5-6')
+
+    def test_negatives_inNumber_error_message_should_contain_negatives(self):
+        try:
+            self.calc.add('2,-3,4,-5')
+        except Exception as ex:
+            message = ex.args[0]
+        self.assertEqual('negatives are not allowed: -3, -5', message)
+
+    def test_different_delimiters_should_return_sum(self):
+        result = self.calc.add('//[***]\n2***3***4')
+        self.assertEqual(result, 9)
+
+    def test_numbers_bigger_then_1000_should_be_ignored(self):
+        result = self.calc.add('2,1001,3,1005, 1000')
+        self.assertEqual(1005, result)
+
+    def test_multiple_delimiters_should_return_sum(self):
+        result = self.calc.add('//[***][;;]\n2***3;;4***1')
+        self.assertEqual(result, 10)
+        
+
+
+
+
+         
+
+        
+
+
             
         
         

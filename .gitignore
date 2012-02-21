@@ -31,3 +31,4 @@ _ReSharper*/
 *.resharper
 *.local.xml
 workspace.xml
+.idea*/

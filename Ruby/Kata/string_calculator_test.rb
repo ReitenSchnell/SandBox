@@ -38,4 +38,15 @@ class StringCalculatorTests < Test::Unit::TestCase
     result = @calculator.add '5\n7\n1,2'
     self.assert_equal 15, result
   end
+
+  def test_one_char_delimiter_in_brackets_returns_sum
+    result = @calculator.add '//[*]\n1*2*3'
+    self.assert_equal 6, result
+  end
+
+  def test_negative_values_throws
+    self.assert_raise ArgumentError do
+       @calculator.add '1,-2,3,-2'
+    end
+  end
 end

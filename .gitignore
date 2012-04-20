@@ -19,6 +19,7 @@
 *.lib
 *.sbr
 *.scc
+*.pyc
 [Bb]in
 [Dd]ebug*/
 obj/
@@ -31,4 +32,4 @@ _ReSharper*/
 *.resharper
 *.local.xml
 workspace.xml
-.idea*/
+.idea/

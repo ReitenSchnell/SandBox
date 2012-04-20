@@ -49,4 +49,12 @@ class StringCalculatorTests < Test::Unit::TestCase
        @calculator.add '1,-2,3,-2'
     end
   end
+
+  def test_negative_values_error_msg_contains_negatives
+    begin
+      @calculator.add '1,-2,3,-3'
+    rescue ArgumentError => error
+    end
+    self.assert_equal 'Negatives are not allowed: -2,-3', error.message
+  end
 end

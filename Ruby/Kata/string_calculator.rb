@@ -11,7 +11,7 @@ class StringCalculator
     values = number.split(delimiters).map(&:to_i)
     negatives = values.find_all{|item| item < 0}
     if not negatives.empty?
-      raise ArgumentError, 'Negatives are not allowed'
+      raise ArgumentError, 'Negatives are not allowed: '+negatives.join(',')
     end
     return values.inject(:+)
   end

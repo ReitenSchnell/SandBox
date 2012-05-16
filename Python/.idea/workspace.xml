@@ -23,10 +23,46 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="kata.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/kata.py">
+      <file leaf-file-name="dyn_stanley.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dyn_stanley.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="13" selection-start="0" selection-end="13" vertical-scroll-proportion="-0.6028369">
+            <state line="61" column="0" selection-start="2282" selection-end="2282" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="stars.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/stars.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="191" column="35" selection-start="5674" selection-end="5674" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pocker.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pocker.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="13" selection-start="209" selection-end="209" vertical-scroll-proportion="0.21174377">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="stanley.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/stanley.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="165" column="32" selection-start="6370" selection-end="6376" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dynamic.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dynamic.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="94" column="15" selection-start="3137" selection-end="3137" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -42,10 +78,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/PythonChallemge.py" />
-        <option value="$PROJECT_DIR$/Challenge.py" />
-        <option value="$PROJECT_DIR$/pyton_challenges.py" />
         <option value="$PROJECT_DIR$/kata.py" />
+        <option value="$PROJECT_DIR$/mpnkey.py" />
+        <option value="$PROJECT_DIR$/monkey.py" />
+        <option value="$PROJECT_DIR$/sudoku.py" />
+        <option value="$PROJECT_DIR$/smoothing.py" />
+        <option value="$PROJECT_DIR$/cte.py" />
+        <option value="$PROJECT_DIR$/se_tests.py" />
+        <option value="$PROJECT_DIR$/triangle.py" />
+        <option value="$PROJECT_DIR$/licky_search.py" />
+        <option value="$PROJECT_DIR$/quick_sort.py" />
+        <option value="$PROJECT_DIR$/se_exam.py" />
+        <option value="$PROJECT_DIR$/stanley.py" />
+        <option value="$PROJECT_DIR$/dynamic.py" />
+        <option value="$PROJECT_DIR$/dyn_stanley.py" />
+        <option value="$PROJECT_DIR$/stars.py" />
+        <option value="$PROJECT_DIR$/pocker.py" />
       </list>
     </option>
   </component>
@@ -75,6 +123,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Favorites" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -140,7 +189,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Favorites" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -151,104 +199,91 @@
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
   </component>
-  <component name="RunManager" selected="Python's unittest.Unittests in kata.py">
-    <configuration default="false" name="Unittests in StringCalculatorTests.test_negatives_in_number_throws" type="PythonUnitTestConfigurationType" factoryName="Python's unittest" temporary="true">
+  <component name="RunManager" selected="Python.pocker">
+    <configuration default="false" name="stanley" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <module name="Python" />
-      <option name="SCRIPT_NAME" value="kata.py" />
-      <option name="CLASS_NAME" value="StringCalculatorTests" />
-      <option name="METHOD_NAME" value="test_negatives_in_number_throws" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_METHOD" />
-      <option name="PATTERN" value="" />
-      <option name="PUREUNITTEST" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/stanley.py" />
+      <option name="PARAMETERS" value="" />
       <RunnerSettings RunnerId="PyDebugRunner" />
       <RunnerSettings RunnerId="PythonRunner" />
       <ConfigurationWrapper RunnerId="PyDebugRunner" />
       <ConfigurationWrapper RunnerId="PythonRunner" />
       <method />
     </configuration>
-    <configuration default="false" name="Unittests in StringCalculatorTests" type="PythonUnitTestConfigurationType" factoryName="Python's unittest" temporary="true">
+    <configuration default="false" name="dynamic" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <module name="Python" />
-      <option name="SCRIPT_NAME" value="kata.py" />
-      <option name="CLASS_NAME" value="StringCalculatorTests" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_CLASS" />
-      <option name="PATTERN" value="" />
-      <option name="PUREUNITTEST" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dynamic.py" />
+      <option name="PARAMETERS" value="" />
       <RunnerSettings RunnerId="PyDebugRunner" />
       <RunnerSettings RunnerId="PythonRunner" />
       <ConfigurationWrapper RunnerId="PyDebugRunner" />
       <ConfigurationWrapper RunnerId="PythonRunner" />
       <method />
     </configuration>
-    <configuration default="false" name="Unittests in StringCalculatorTests.test_3chars_delimiters_should_return_sum" type="PythonUnitTestConfigurationType" factoryName="Python's unittest" temporary="true">
+    <configuration default="false" name="dyn_stanley" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <module name="Python" />
-      <option name="SCRIPT_NAME" value="kata.py" />
-      <option name="CLASS_NAME" value="StringCalculatorTests" />
-      <option name="METHOD_NAME" value="test_3chars_delimiters_should_return_sum" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_METHOD" />
-      <option name="PATTERN" value="" />
-      <option name="PUREUNITTEST" value="true" />
-      <RunnerSettings RunnerId="PyDebugRunner" />
-      <ConfigurationWrapper RunnerId="PyDebugRunner" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Unittests in StringCalculatorTests.test_xxx" type="PythonUnitTestConfigurationType" factoryName="Python's unittest" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <module name="Python" />
-      <option name="SCRIPT_NAME" value="kata.py" />
-      <option name="CLASS_NAME" value="StringCalculatorTests" />
-      <option name="METHOD_NAME" value="test_xxx" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_METHOD" />
-      <option name="PATTERN" value="" />
-      <option name="PUREUNITTEST" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dyn_stanley.py" />
+      <option name="PARAMETERS" value="" />
       <RunnerSettings RunnerId="PyDebugRunner" />
       <RunnerSettings RunnerId="PythonRunner" />
       <ConfigurationWrapper RunnerId="PyDebugRunner" />
       <ConfigurationWrapper RunnerId="PythonRunner" />
       <method />
     </configuration>
-    <configuration default="false" name="Unittests in kata.py" type="PythonUnitTestConfigurationType" factoryName="Python's unittest" temporary="true">
+    <configuration default="false" name="stars" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <module name="Python" />
-      <option name="SCRIPT_NAME" value="kata.py" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="PUREUNITTEST" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/stars.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PyDebugRunner" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PyDebugRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="pocker" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <module name="Python" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pocker.py" />
+      <option name="PARAMETERS" value="" />
       <RunnerSettings RunnerId="PythonRunner" />
       <ConfigurationWrapper RunnerId="PythonRunner" />
       <method />
@@ -301,11 +336,11 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python's unittest.Unittests in StringCalculatorTests.test_negatives_in_number_throws" />
-      <item index="1" class="java.lang.String" itemvalue="Python's unittest.Unittests in StringCalculatorTests" />
-      <item index="2" class="java.lang.String" itemvalue="Python's unittest.Unittests in StringCalculatorTests.test_3chars_delimiters_should_return_sum" />
-      <item index="3" class="java.lang.String" itemvalue="Python's unittest.Unittests in StringCalculatorTests.test_xxx" />
-      <item index="4" class="java.lang.String" itemvalue="Python's unittest.Unittests in kata.py" />
+      <item index="0" class="java.lang.String" itemvalue="Python.stanley" />
+      <item index="1" class="java.lang.String" itemvalue="Python.dynamic" />
+      <item index="2" class="java.lang.String" itemvalue="Python.dyn_stanley" />
+      <item index="3" class="java.lang.String" itemvalue="Python.stars" />
+      <item index="4" class="java.lang.String" itemvalue="Python.pocker" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
@@ -337,13 +372,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2557298" sideWeight="0.674685" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25693607" sideWeight="0.674685" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39747995" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.325315" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -399,41 +434,86 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pycharm/tcunittest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="172" column="0" selection-start="5846" selection-end="5846" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm10/system/python_stubs/-891257481/exceptions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="10" selection-start="2653" selection-end="2653" vertical-scroll-proportion="0.030303031" />
-      </provider>
-    </entry>
-    <entry file="file://C:/Python26/Lib/unittest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="278" column="0" selection-start="9830" selection-end="9830" vertical-scroll-proportion="0.030303031" />
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pycharm/utrunner.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="149" column="0" selection-start="4433" selection-end="4433" vertical-scroll-proportion="1.2049911" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pyton_challenges.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="45" selection-start="521" selection-end="521" vertical-scroll-proportion="0.27919707" />
-      </provider>
-    </entry>
     <entry file="file://C:/Python26/Lib/random.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/kata.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="13" selection-start="0" selection-end="13" vertical-scroll-proportion="-0.6028369">
+        <state line="54" column="53" selection-start="2017" selection-end="2017" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sudoku.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="17" selection-start="31" selection-end="400" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/se_tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="15" selection-start="1346" selection-end="1624" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/triangle.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="23" selection-start="954" selection-end="1382" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/licky_search.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="17" selection-start="575" selection-end="834" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/quick_sort.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="64" column="17" selection-start="1593" selection-end="2415" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/monkey.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="19" selection-start="608" selection-end="608" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cte.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="189" column="10" selection-start="5573" selection-end="5573" vertical-scroll-proportion="0.727758" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smoothing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="86" column="35" selection-start="2862" selection-end="2862" vertical-scroll-proportion="-1.8434163" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/se_exam.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="17" selection-start="329" selection-end="472" vertical-scroll-proportion="0.5142349" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dyn_stanley.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="61" column="0" selection-start="2282" selection-end="2282" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stars.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="191" column="35" selection-start="5674" selection-end="5674" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stanley.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="165" column="32" selection-start="6370" selection-end="6376" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dynamic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="94" column="15" selection-start="3137" selection-end="3137" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pocker.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="13" selection-start="209" selection-end="209" vertical-scroll-proportion="0.21174377">
           <folding />
         </state>
       </provider>

@@ -73,3 +73,20 @@ class Graph(dict):
             for inner_node in self:
                 if node != inner_node and inner_node not in self[node]:
                     self.add_edge(Edge(node, inner_node))
+
+    def add_regular_edges(self, degree):
+        vertices = self.vertices()
+        n = len(vertices)
+        if degree >= n or (degree%2 and n%2):
+            raise StandardError('Impossible to build regular graph')
+        m = degree/2 if not degree%2 else (degree - 1)/2
+        for i in range(n):
+            self.add_edge(Edge(vertices[i], vertices[(i+1)%len(vertices)]))
+            for j in range(1, m+1):
+                self.add_edge(Edge(vertices[i], vertices[(i+j)%len(vertices)]))
+                self.add_edge(Edge(vertices[i], vertices[(i-j)%len(vertices)]))
+            if not n%2 and degree%2:
+                self.add_edge(Edge(vertices[i], vertices[(i+n/2)%len(vertices)]))
+
+
+

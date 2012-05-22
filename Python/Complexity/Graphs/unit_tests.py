@@ -1,4 +1,5 @@
 from unittest import TestCase
+from GraphWorld import CircleLayout, GraphWorld
 from graph import Vertex, Edge, Graph
 
 class VertexTests(TestCase):
@@ -104,5 +105,45 @@ class GraphTests(TestCase):
             for node_to in self.graph:
                 if node_from != node_to:
                     self.assertTrue(self.graph[node_from][node_to] == self.graph[node_to][node_from])
+
+    def test_add_regular_edges_should_raise_if_degree_equal_to_vertex_count(self):
+        self.arrange()
+        degree = len(self.vs)
+        self.assertRaises(StandardError, self.graph.add_regular_edges, degree)
+
+    def test_add_regular_edges_should_raise_if_degree_greater_than_vertex_count(self):
+        self.arrange()
+        degree = len(self.vs) + 1
+        self.assertRaises(StandardError, self.graph.add_regular_edges, degree)
+
+    def test_add_regular_edges_should_raise_if_degree_is_odd_and_vertex_count_is_odd(self):
+        self.arrange()
+        degree = len(self.vs) - 2
+        self.assertRaises(StandardError, self.graph.add_regular_edges, degree)
+
+    def show_graph(self):
+        layout = CircleLayout(self.graph)
+        gw = GraphWorld()
+        gw.show_graph(self.graph, layout)
+        gw.mainloop()
+
+    def setup_regular_edges(self, degree, v_count):
+        self.vs = [Vertex(str(i)) for i in range(1,v_count+1)]
+        self.graph = Graph(self.vs, [])
+        self.graph.add_regular_edges(degree)
+        self.show_graph()
+        self.assertFalse(any([v for v in self.graph.vertices() if len(self.graph.out_edges(v)) != degree]))
+
+    def test_add_regular_edges_degree_is_even_v_count_is_even_check_each_vertex_degree(self):
+        self.setup_regular_edges(4,10)
+
+    def test_add_regular_edges_degree_is_even_v_count_is_odd_check_each_vertex_degree(self):
+        self.setup_regular_edges(4,9)
+
+    def test_add_regular_edges_degree_is_odd_v_count_is_even_check_each_vertex_degree(self):
+        self.setup_regular_edges(5,12)
+
+
+
 
 

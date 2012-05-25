@@ -179,6 +179,16 @@ class RandomLayout(Layout):
             self.spread_vertex(v, others)
             others.append(v)
 
+def create_graph(v_count):
+    vs = [Vertex(str(i)) for i in range(1,v_count+1)]
+    graph = Graph(vs, [])
+    return graph
+
+def draw_graph(graph):
+    layout = CircleLayout(graph)
+    gw = GraphWorld()
+    gw.show_graph(graph, layout)
+    gw.mainloop()
 
 
 def main(script, n='10', *args):

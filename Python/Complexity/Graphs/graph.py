@@ -88,6 +88,20 @@ class Graph(dict):
             if not n%2 and degree%2:
                 self.add_edge(Edge(vertices[i], vertices[(i+n/2)%len(vertices)]))
 
+    def is_connected(self):
+        v_list = self.vertices()
+        if not len(v_list):
+            return False
+        frontier = [v_list[0]]
+        marked = []
+        while len(frontier):
+            current = frontier.pop()
+            marked.append(current)
+            for v in self.out_vertices(current):
+                if v not in marked and v not in frontier:
+                    frontier.append(v)
+        return len(marked) == len(v_list)
+
 class VertexTests(TestCase):
     def arrange(self):
         self.lbl = 'lbl'
@@ -207,12 +221,6 @@ class GraphTests(TestCase):
         degree = len(self.vs) - 2
         self.assertRaises(StandardError, self.graph.add_regular_edges, degree)
 
-    def setup_and_test_regular_edges(self, degree, v_count):
-        vs = [Vertex(str(i)) for i in range(1,v_count+1)]
-        self.graph = Graph(vs, [])
-        self.graph.add_regular_edges(degree)
-        self.assertFalse(any([v for v in self.graph.vertices() if len(self.graph.out_edges(v)) != degree]))
-
     def test_add_regular_edges_degree_is_even_v_count_is_even_check_each_vertex_degree(self):
         self.setup_and_test_regular_edges(4,10)
 
@@ -221,3 +229,42 @@ class GraphTests(TestCase):
 
     def test_add_regular_edges_degree_is_odd_v_count_is_even_check_each_vertex_degree(self):
         self.setup_and_test_regular_edges(5,12)
+
+    def test_is_connected_should_return_false_for_graph_with_one_disconnected_node(self):
+        self.create_disconnected_graph(4)
+        for i in range(len(self.vs) - 2):
+            self.graph.add_edge(Edge(self.vs[i], self.vs[i+1]))
+        result = self.graph.is_connected()
+        self.assertEqual(False, result)
+
+    def test_is_connected_should_return_true_for_circle_graph_without_one_edge(self):
+        self.create_disconnected_graph(4)
+        for i in range(len(self.vs) - 1):
+            self.graph.add_edge(Edge(self.vs[i], self.vs[i+1]))
+        result = self.graph.is_connected()
+        self.assertEqual(True, result)
+
+    def test_is_connected_should_return_true_for_circle_graph(self):
+        self.create_disconnected_graph(4)
+        for i in range(len(self.vs)):
+            self.graph.add_edge(Edge(self.vs[i], self.vs[(i+1)%len(self.vs)]))
+        result = self.graph.is_connected()
+        self.assertEqual(True, result)
+
+    def test_is_connected_should_return_false_for_graph_without_nodes(self):
+        self.graph = Graph()
+        result = self.graph.is_connected()
+        self.assertEqual(False, result)
+
+    def create_disconnected_graph(self, v_count):
+        self.vs = [Vertex(str(i)) for i in range(1, v_count + 1)]
+        self.graph = Graph(self.vs, [])
+
+    def setup_and_test_regular_edges(self, degree, v_count):
+        self.create_disconnected_graph(v_count)
+        self.graph.add_regular_edges(degree)
+        self.assertFalse(any([v for v in self.graph.vertices() if len(self.graph.out_edges(v)) != degree]))
+
+
+
+

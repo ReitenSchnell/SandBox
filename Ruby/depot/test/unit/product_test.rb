@@ -8,11 +8,15 @@ class ProductTest < ActiveSupport::TestCase
 		assert product.errors[:description].any?
 		assert product.errors[:image_url].any?
 		assert product.errors[:price].any?
-	end
+  end
+
+  def get_valid_book_title
+    "Valid book title"
+  end
 	
 	test 'product price must be positive' do
 		product = Product.new(
-			:title => "Book",
+			:title => get_valid_book_title,
 			:description => "Description",
 			:image_url => "zzz.jpg"
 		)
@@ -31,7 +35,7 @@ class ProductTest < ActiveSupport::TestCase
 	
 	def new_product(image_url) 
 		product = Product.new(
-			:title => "Book",
+			:title => get_valid_book_title,
 			:description => "Description",
 			:image_url => image_url,
 			:price => 1
@@ -58,4 +62,22 @@ class ProductTest < ActiveSupport::TestCase
     assert !product.save
     assert_equal 'has already been taken', product.errors[:title].join('; ')
   end
+
+  test 'product title must be at least 10 characters length' do
+    		product = Product.new(
+    			:description => "Description",
+    			:image_url => "zzz.jpg",
+          :price => 1
+    		)
+    		product.title = "Book"
+    		assert product.invalid?
+    		assert_equal 'must be at least 10 characters long', product.errors[:title].join('; ')
+
+        product.title = "Book nine"
+        assert product.invalid?
+        assert_equal 'must be at least 10 characters long', product.errors[:title].join('; ')
+
+    		product.title = "Book with length more than 10"
+    		assert product.valid?
+    end
 end

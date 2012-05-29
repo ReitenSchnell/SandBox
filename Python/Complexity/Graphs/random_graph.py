@@ -35,3 +35,30 @@ class RandomGraphTests(TestCase):
     def test_should_raise_when_probability_greater_than_1(self):
         graph = RandomGraph([], [])
         self.assertRaises(StandardError, graph.add_random_edges, 1.1)
+
+def find_phase_transition_probability(n):
+    g_count = 10
+    p_step = 0.1
+    prob_list = []
+    p = 0.0
+    while p <= 1:
+        connected_list = []
+        for i in range(g_count):
+            graph = RandomGraph([Vertex(str(i)) for i in range(1, n +1)], [])
+            graph.add_random_edges(p)
+            connected_list.append(graph.is_connected())
+        prob_list.append(float(sum(connected_list))/float(g_count))
+        p += p_step
+    diff = []
+    for i in range(len(prob_list) - 1):
+        diff.append(prob_list[i+1] - prob_list[i])
+    m = max(diff)
+    return (diff.index(m) + 1)*p_step
+
+print find_phase_transition_probability(5)
+
+a = [{23:100}, {3:103}, {2:102}, {36:103}, {43:123}]
+print sorted(a, key=lambda x: x.values()[0], reverse=True)
+
+
+

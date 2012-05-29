@@ -1,7 +1,6 @@
 import random
 import itertools
 from unittest import TestCase
-import GraphWorld
 from graph import Graph, Edge, Vertex
 
 class RandomGraph(Graph):

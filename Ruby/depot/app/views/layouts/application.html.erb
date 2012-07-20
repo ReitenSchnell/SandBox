@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Depot</title>
-  <%= stylesheet_link_tag    :depot %>
-  <%= javascript_include_tag "application" %>
+  <title>Books online store</title>
+  <%= stylesheet_link_tag    "depot", :media => "all" %>
+  <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-
-<%= yield %>
-
+<body id="store">
+<div id="banner">
+  <%= image_tag("logo.png") %>
+  <%= @page_title || "Pragmatic bookshelf" %>
+</div>
+<div id="columns">
+  <div id="side">
+    <a href="www.yandex.ru">Home</a>
+    <a href="www.yandex.ru">Questions</a>
+    <a href="www.yandex.ru">News</a>
+    <a href="www.yandex.ru">Contacts</a>
+  </div>
+  <div id="main">
+    <%= yield %>
+  </div>
+</div>
 </body>
 </html>

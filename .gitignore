@@ -34,3 +34,8 @@ _ReSharper*/
 workspace.xml
 .idea/
 *.pyc
+*.resharper
+*.local.xml
+workspace.xml
+/.idea/
+*.pyc

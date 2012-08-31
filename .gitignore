@@ -37,5 +37,5 @@ workspace.xml
 *.resharper
 *.local.xml
 workspace.xml
-/.idea/
+.idea/
 *.pyc

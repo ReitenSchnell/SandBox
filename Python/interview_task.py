@@ -1,6 +1,7 @@
 from collections import defaultdict
 import random
 import string
+import subprocess
 from unittest import TestCase
 import math
 import uuid
@@ -19,18 +20,25 @@ def generate_mess(str, size):
     result = fill_chars[0:divider] + mess + fill_chars[divider:]
     return string.join(result, '')
 
-def generate_names(size):
-    names = ['a','b','c']
+
+def generate_name_list(size):
+    names = ['a', 'b', 'c']
     lst = []
     for n in names:
         for i in range(size):
-            age = i + 10
+            age = id(n) + i + 10
             name = n
-            guid = uuid.uuid4()
-            lst.append("%s, %s, %s"%(name, age, guid))
+            _id = uuid.uuid4()
+            lst.append("%s, %s, %s" % (name, age, _id))
     random.shuffle(lst)
+    s = "\n".join(lst)
+    return s
+
+
+def generate_names_and_save(size):
+    s = generate_name_list(size)
     f = open('names.txt', 'w')
-    f.write("\n".join(lst))
+    f.write(s)
     f.close()
 
 class Tests(TestCase):
@@ -63,4 +71,16 @@ class Tests(TestCase):
         for val in sorted_list:
             print val
         print sorted_list[12][2]
+
+    def _test_get_my_names(self):
+        s = generate_names_and_save(50000)
+        print s
+
+    def _test_obfuscate_link(self):
+        s = generate_mess('https://raw.github.com/gist/e8f493cf008ac88ae81b/21240084be77b7cec6a905a0c65821c9549574b4/gistfile1.txt', 20000)
+        f = open('obfuscated_link.txt', 'w')
+        f.write(s)
+        f.close()
+
+
 

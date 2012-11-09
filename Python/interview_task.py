@@ -20,6 +20,27 @@ def generate_mess(str, size):
     result = fill_chars[0:divider] + mess + fill_chars[divider:]
     return string.join(result, '')
 
+def make_list_from_sentence(sentence):
+    digit_char_list = [str(i+1)+sentence[i] for i in range(len(sentence))]
+    return digit_char_list
+
+def generate_encoded_text(sentence, size):
+    digit_chars = (make_list_from_sentence(sentence))
+    random.shuffle(digit_chars)
+    size_of_piece = size/len(digit_chars)
+    other_chars = string.letters
+    mess = []
+    for i in range(len(digit_chars)):
+        random_piece = [random.choice(list(other_chars)) for j in range(random.randint(1, size_of_piece))]
+        mess += random_piece + [digit_chars[i]]
+    tail_len = size - len(mess)
+    fill_chars = [random.choice(list(other_chars)) for j in range(tail_len)]
+    divider = random.randint(0, tail_len - 1)
+    result = fill_chars[0:divider] + mess + fill_chars[divider:]
+    return string.join(result, '')
+
+#print generate_encoded_text('There is nothing I love more than watching someone being ejected from a spaceship', 10000)
+
 
 def generate_name_list(size):
     names = ['a', 'b', 'c']
@@ -81,6 +102,12 @@ class Tests(TestCase):
         f = open('obfuscated_link.txt', 'w')
         f.write(s)
         f.close()
+
+    def test_generate_encoded_text(self):
+        result = make_list_from_sentence('hal dave')
+        self.assertEqual(['1h', '2a', '3l', '4 ', '5d', '6a', '7v', '8e'], result)
+
+print generate_mess('https://raw.github.com/gist/cb87a1b99b4e7834f8f3/09ebfcd3fe21988e661ef7daec42f3322f081d8b/gistfile1.txt', 20000)
 
 
 

@@ -1,0 +1,10 @@
+﻿billig, cheap
+böse, angry
+breit, wide
+dunkel, dark
+hässlich, ugly
+höflich, polite
+preiswert, inexpensive
+ruhig, quiet
+schmal, narrow
+teuer, expensive

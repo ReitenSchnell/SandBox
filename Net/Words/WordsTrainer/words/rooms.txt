@@ -1,0 +1,14 @@
+﻿das Arbeitszimmer, workroom
+das Bad, bathroom
+der Balkon, balkony
+der Flur, hall
+der Garten, garden
+das Haus, house
+die Wohnung, appartment
+die Küche, kitchen
+das Schlafzimmer, bedroom
+der Stock, floor
+die Terasse, patio
+die Toilette, toilet
+das Wohnzimmer, livingroom
+das Zimmer, room

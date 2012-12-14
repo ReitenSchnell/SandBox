@@ -1,0 +1,13 @@
+﻿das Möbel, furniture
+die Badewanne, bath
+das Bett, bad
+die Dusche, shower
+der Fernseher, tv
+der Herd, stove
+der Kühlschrank, fridge
+die Lampe, lamp
+der Schrank, locker
+das Sofa, sofa
+der Stuhl, chair
+der Tisch, table
+die Waschmaschine, washing machine

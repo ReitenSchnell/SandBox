@@ -1,0 +1,8 @@
+﻿die Woche, week
+der Montag, Monday
+der Dienstag, Tuesday
+der Mittwoch, Wednesday
+der Donnerstag, Thursday
+der Freitag, Friday
+der Samstag, Saturday
+der Sonntag, Sunday

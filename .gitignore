@@ -39,3 +39,4 @@ workspace.xml
 workspace.xml
 .idea/
 *.pyc
+packages/

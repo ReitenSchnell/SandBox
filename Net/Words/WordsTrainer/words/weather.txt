@@ -1,0 +1,19 @@
+﻿das Grad, grad
+der Regen, rain
+die Sonne, sun
+das Wetter, weather
+der Wind, wind
+regnen, rains
+schneien, snows
+scheinen, shines
+bewölkt, cloudy
+heiß, hot
+windig, windy
+der Norden, north
+der Süden, south
+der Westen, west
+der Osten, east
+der Frühling, spring
+der Sommer, summer
+der Herbst, fall
+der Winter, winter

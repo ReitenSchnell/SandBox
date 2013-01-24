@@ -7,5 +7,5 @@ Scenario: Nonperfect number
 
 Scenario: Perfect number
 	Given Perfect number	
-	When Asked if the number is perfect
+	When Asked if the number is not perfect
 	Then the result should be True
